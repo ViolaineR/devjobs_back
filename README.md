@@ -1,6 +1,6 @@
 # devjobs_back
 
-##Table of Contents
+## Table of Contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
@@ -14,7 +14,7 @@ Project is created with:
 * Symfony version: 5.4.*
 * Composer version: 2.3.7
 
-##Setup
+## Setup
 To clone the project do the following commands:
 ```
 git clone https://github.com/ViolaineR/devjobs_back.git
