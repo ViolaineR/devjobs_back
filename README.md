@@ -24,7 +24,7 @@ Go to the folder containing the project and install Composer:
 cd devjobs_back
 composer install
 ```
-Open the file env.local and modify the database url:
+Open the env.local file and modify the database url with your information (e.g. db_user, db_password and db_name) in the example below:
 ```
 DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7&charset=utf8mb4"
 ```
@@ -39,4 +39,8 @@ symfony console make:migration
 To update the database, run the migrations with the command:
 ```
 symfony console doctrine:migrations:migrate
+```
+Finally, start the project locally with:
+```
+symfony serve
 ```
