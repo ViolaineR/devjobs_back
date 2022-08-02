@@ -2,15 +2,19 @@
 
 {% block body %}
 
-    <main class="container-fluid bg-light">
-        <section class="px-4 py-5 my-5 text-center shadow-lg bg-body rounded">
-            <h1 class="text-secondary display-5 fw-bold"> Welcome to Devjobs </h1>
-            <p class="text-primary lead mb-4 col-lg-6 mx-auto">If you are looking for your dream job in the world of technology, or if you are looking for that special someone, you have come to the right place!</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a href="{{ path('job_index') }}" type="button" class="btn btn-outline-primary btn-lg">View our job offers</a>
-                <a href="#" type="button" class="btn btn-outline-secondary btn-lg">Post your job offers</a>
-            </div>
-        </section>
-    </main>
+	<main class="container-fluid bg-light">
+		<section class="px-4 py-5 my-5 text-center shadow-lg bg-body rounded">
+			<h1 class="text-secondary display-5 fw-bold">
+				Welcome to Devjobs
+			</h1>
+			<p class="text-primary lead mb-4 col-lg-6 mx-auto">If you are looking for your dream job in the world of technology, or if you are looking for that special someone, you have come to the right place!</p>
+			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+				<a href="{{ path('job_index') }}" type="button" class="btn btn-outline-primary btn-lg">View our job offers</a>
+				<a href="{{ path('new_job') }}" type="button" class="btn btn-outline-secondary btn-lg">Post your job offers</a>
+
+
+			</div>
+		</section>
+	</main>
 
 {% endblock %}

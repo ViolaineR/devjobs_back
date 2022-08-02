@@ -2,13 +2,24 @@
 
 {% block body %}
 
-    <section class="px-4 py-5 my-5 text-center shadow-lg bg-body rounded">
-        <h1 class="text-secondary display-5 fw-bold"> {{ job.title }} </h1>
-        <p class="text-primary lead mb-4 col-lg-6 mx-auto">{{ job.description }}</p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="#" type="button" class="btn btn-outline-primary btn-lg">Apply to the offer</a>
-            <a href="{{ path('job_index') }}" type="button" class="btn btn-outline-secondary btn-lg">Back to the list</a>
-        </div>
-    </section>
+	<section class="px-4 py-5 my-5 text-center shadow-lg bg-body rounded">
+		<h1 class="text-secondary display-5 fw-bold">
+			{{ job.title }}
+		</h1>
+		<p class="text-primary lead mb-4 col-lg-6 mx-auto">{{ job.description }}</p>
+		<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+			{% if app.user %}
+				{% if app.user.id == companyId %}
+					<a href="{{ path('job_candidates', {'id': job.id}) }}" type="button" class="btn btn-outline-primary btn-lg">View candidates</a>
+					<a href="{{ path('job_update', {'id': job.id}) }}" type="button" class="btn btn-outline-primary btn-lg">Edit Job Offer</a>
+				{% endif %}
+
+
+			{% else %}
+				<a href="{{ path('job_apply', {'id': job.id}) }}" type="button" class="btn btn-outline-primary btn-lg">Apply to the offer</a>
+			{% endif %}
+			<a href="{{ path('job_index') }}" type="button" class="btn btn-outline-secondary btn-lg">Back to the list</a>
+		</div>
+	</section>
 
 {% endblock %}
